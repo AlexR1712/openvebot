@@ -57,7 +57,10 @@ def inlinequery(bot, update):
                 input_message_content=InputTextMessageContent(
                     "Nombre: {}\nLink: {} \nAdmins: {}".format(escape_markdown(td[0].text),td[2].text,td[1].text)),
                 url=td[2].text,
-                reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton('▶️  Ir al Grupo ◀️', url=td[2].text)]])))
+                reply_markup=InlineKeyboardMarkup([
+                            [InlineKeyboardButton('▶️  Ir al Grupo ◀️', url=td[2].text)],
+                            [InlineKeyboardButton('🔎 Encontrar Grupos', switch_inline_query_current_chat="")]
+                        ])))
     
     elif len(query) > 0:
             found = 0
@@ -71,7 +74,10 @@ def inlinequery(bot, update):
                         input_message_content=InputTextMessageContent(
                         "Nombre: {}\nLink: {} \nAdmins: {}".format(escape_markdown(tds[0].text),tds[2].text,tds[1].text)),
                         url=tds[2].text,
-                        reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton('▶️  Ir al Grupo ◀️', url=tds[2].text)]])))
+                        reply_markup=InlineKeyboardMarkup([
+                            [InlineKeyboardButton('▶️  Ir al Grupo ◀️', url=tds[2].text)],
+                            [InlineKeyboardButton('🔎 Encontrar Grupos', switch_inline_query_current_chat="")]
+                        ])))
             if found == 0:
                 results.append(InlineQueryResultArticle(
                     id=uuid4(), 
