@@ -20,7 +20,7 @@ Una vez hecho esto, solo es necesario ejecutar el archivo bot.py
 - [x] Devolver nombre, enlace y admins del grupo en el query result.
 - [x] Busqueda simple por el nombre.
 
-- [ ] Corregir `Bad Request: RESULTS_TOO_MUCH` al estar el query vacio
+- [x] Corregir `Bad Request: RESULTS_TOO_MUCH` al estar el query vacio
 
 > Producido porque son muchos grupos y el maximo a enviar por peticion son 50.
 
